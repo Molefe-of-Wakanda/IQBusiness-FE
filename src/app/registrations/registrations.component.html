@@ -1,0 +1,18 @@
+<div>
+    <h2 *ngIf="persons">List of All Registered Persons:</h2>
+    <h2 *ngIf="!persons">There Are No Registered Persons</h2>
+    <ul>
+        <li *ngFor="let person of persons">
+            {{person.fullName}} ({{person.idNumber}})
+            - <a (click)="deleteUser(person.idNumber)" class="text-danger">Delete</a>
+        </li>
+    </ul>
+</div>
+<div class="button-group">
+    <button type="button" class="btn btn-primary btn-block" routerLink="/register">
+        Register
+    </button>
+    <button type="button" class="btn btn-primary btn-block" routerLink="/welcome">
+        Home
+    </button>
+</div>
